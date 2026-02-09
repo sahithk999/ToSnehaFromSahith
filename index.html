@@ -5,14 +5,13 @@
   <title>To Sneha, From Sahith ❤️</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- PASSWORD LOCK -->
+<!-- PASSWORD SCREEN -->
 <div id="lockScreen">
   <h2>💖 To Sneha, From Sahith</h2>
   <p>Enter the secret word</p>
-  <input type="2106" id="password" placeholder="hint: your name 😉">
+  <input type="password" id="2106" placeholder="hint: Our Special Numbers 😉">
   <button onclick="unlock()">Enter</button>
 </div>
 
@@ -32,19 +31,31 @@
   <nav>
     <a href="#home">Home</a>
     <a href="#timeline">Timeline</a>
+    <a href="#lovemap">Love Map</a>
     <a href="#gallery">Photos</a>
     <a href="#notes">Notes</a>
   </nav>
 
-  <button id="musicBtn">🎵 Play Music</button>
+  <div class="header-buttons">
+    <button id="musicBtn">🎵 Play Music</button>
+    <button id="snehaModeBtn">💖 Sneha Mode</button>
+  </div>
+
+  <p id="snehaMessage">This world feels better when you’re in it, Sneha 🤍</p>
 </header>
 
 <section id="home" class="section">
   <h2>Hi Sneha 🥰</h2>
   <p>
     This little corner of the internet is just for you.
-    A place where our memories live forever.
+    Every memory here exists because of us.
   </p>
+</section>
+
+<section id="countdown" class="section">
+  <h2>First Anniversary Countdown ⏳</h2>
+  <p>Counting every second since we became forever 🤍</p>
+  <h3 id="timer"></h3>
 </section>
 
 <section id="timeline" class="section">
@@ -53,20 +64,57 @@
   <div class="timeline">
     <div class="event">
       <h3>💫 The Beginning</h3>
-      <p>The day everything changed quietly.</p>
+      <p>March 2022 — the start of something beautiful.</p>
       <img src="photo1.jpg">
     </div>
 
     <div class="event">
-      <h3>❤️ Falling in Love</h3>
-      <p>Somewhere between talks and smiles.</p>
+      <h3>✈️ Distance & Faith</h3>
+      <p>I went abroad for my studies, but love never left.</p>
       <img src="photo2.jpg">
     </div>
 
     <div class="event">
-      <h3>🌸 Our Best Days</h3>
-      <p>Every memory with you is my favorite.</p>
+      <h3>💞 April 2024</h3>
+      <p>Meeting you again felt like home.</p>
       <img src="photo3.jpg">
+    </div>
+
+    <div class="event">
+      <h3>💍 November 2025</h3>
+      <p>The day you became my forever.</p>
+      <img src="photo4.jpg">
+    </div>
+  </div>
+</section>
+
+<section id="lovemap" class="section">
+  <h2>Our Love Map 🗺️</h2>
+
+  <div class="map">
+    <div class="map-point">
+      <span>📍 March 2022</span>
+      <p>Our story began.</p>
+    </div>
+
+    <div class="map-point">
+      <span>✈️ 2022 – 2024</span>
+      <p>Different countries, same heartbeat.</p>
+    </div>
+
+    <div class="map-point">
+      <span>💞 April 2024</span>
+      <p>Love felt brand new again.</p>
+    </div>
+
+    <div class="map-point">
+      <span>🤍 November 2024</span>
+      <p>Another reunion, stronger than distance.</p>
+    </div>
+
+    <div class="map-point">
+      <span>💍 November 2025</span>
+      <p>Forever finally began.</p>
     </div>
   </div>
 </section>
@@ -83,18 +131,17 @@
 
 <section id="notes" class="section">
   <h2>Open When… 💌</h2>
-
   <div class="buttons">
     <button onclick="showNote('happy')">😊 Happy</button>
     <button onclick="showNote('miss')">💭 Missing Me</button>
     <button onclick="showNote('sad')">🤍 Sad</button>
   </div>
-
   <p id="noteText"></p>
 </section>
 
 <footer>
-  Forever yours,<br>
+  No matter where life takes us,<br>
+  I’d still choose you — every lifetime.<br><br>
   <strong>Sahith</strong>
 </footer>
 
