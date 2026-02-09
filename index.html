@@ -8,10 +8,19 @@
 
 <body>
 
-<!-- Floating hearts -->
+<!-- PASSWORD LOCK -->
+<div id="lockScreen">
+  <h2>💖 To Sneha, From Sahith</h2>
+  <p>Enter the secret word</p>
+  <input type="2106" id="password" placeholder="hint: your name 😉">
+  <button onclick="unlock()">Enter</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="siteContent" style="display:none;">
+
 <div class="hearts"></div>
 
-<!-- Music -->
 <audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
@@ -33,7 +42,7 @@
 <section id="home" class="section">
   <h2>Hi Sneha 🥰</h2>
   <p>
-    This is our little corner of the internet.
+    This little corner of the internet is just for you.
     A place where our memories live forever.
   </p>
 </section>
@@ -44,19 +53,19 @@
   <div class="timeline">
     <div class="event">
       <h3>💫 The Beginning</h3>
-      <p>The moment our story quietly began.</p>
+      <p>The day everything changed quietly.</p>
       <img src="photo1.jpg">
     </div>
 
     <div class="event">
       <h3>❤️ Falling in Love</h3>
-      <p>Somewhere between conversations and smiles.</p>
+      <p>Somewhere between talks and smiles.</p>
       <img src="photo2.jpg">
     </div>
 
     <div class="event">
       <h3>🌸 Our Best Days</h3>
-      <p>Every day with you feels special.</p>
+      <p>Every memory with you is my favorite.</p>
       <img src="photo3.jpg">
     </div>
   </div>
@@ -88,6 +97,13 @@
   Forever yours,<br>
   <strong>Sahith</strong>
 </footer>
+
+</div>
+
+<!-- IMAGE MODAL -->
+<div id="modal">
+  <img id="modalImg">
+</div>
 
 <script src="script.js"></script>
 </body>
