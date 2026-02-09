@@ -1,15 +1,39 @@
-/* PASSWORD */
+/* 🔐 HEART PASSWORD */
+const correct = ["S","N","E","H","A"];
+let input = [];
+
+const progress = document.getElementById("progress");
+
+document.querySelectorAll("#heartPassword button").forEach(btn => {
+  btn.onclick = () => {
+    input.push(btn.dataset.letter);
+    progress.innerText = input.join(" ");
+
+    if (input.length === correct.length) {
+      if (input.join("") === correct.join("")) unlock();
+      else wrong();
+    }
+  };
+});
+
 function unlock() {
-  const pwd = document.getElementById("password").value.toLowerCase();
-  if (pwd === "sneha") {
+  progress.innerText = "Unlocked with love 💖";
+  setTimeout(() => {
     document.getElementById("lockScreen").style.display = "none";
     document.getElementById("siteContent").style.display = "block";
-  } else {
-    alert("Try again 💕");
-  }
+  }, 800);
 }
 
-/* MUSIC */
+function wrong() {
+  input = [];
+  progress.innerText = "Oops… try again 💕";
+  document.getElementById("heartPassword").classList.add("shake");
+  setTimeout(() => {
+    document.getElementById("heartPassword").classList.remove("shake");
+  }, 400);
+}
+
+/* 🎵 MUSIC */
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 let playing = false;
@@ -25,12 +49,12 @@ musicBtn.onclick = () => {
   playing = !playing;
 };
 
-/* SNEHA MODE */
+/* 💖 SNEHA MODE */
 document.getElementById("snehaModeBtn").onclick = () => {
   document.body.classList.toggle("sneha");
 };
 
-/* NOTES */
+/* 💌 NOTES */
 function showNote(type) {
   const note = document.getElementById("noteText");
   if (type === "happy") note.innerText = "Your smile is my peace 😊";
@@ -38,17 +62,16 @@ function showNote(type) {
   if (type === "sad") note.innerText = "Even bad days end with us 🤍";
 }
 
-/* SCROLL ANIMATION */
-const events = document.querySelectorAll(".event");
+/* ✨ SCROLL ANIMATION */
 window.addEventListener("scroll", () => {
-  events.forEach(e => {
+  document.querySelectorAll(".event").forEach(e => {
     if (e.getBoundingClientRect().top < window.innerHeight - 100) {
       e.classList.add("show");
     }
   });
 });
 
-/* IMAGE MODAL */
+/* 🖼️ MODAL */
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modalImg");
 
@@ -58,26 +81,20 @@ document.querySelectorAll(".gallery img").forEach(img => {
     modalImg.src = img.src;
   };
 });
-
 modal.onclick = () => modal.style.display = "none";
 
-/* ANNIVERSARY COUNTDOWN */
+/* ⏳ ANNIVERSARY COUNTDOWN */
 const anniversary = new Date("November 01, 2026 00:00:00").getTime();
-
 setInterval(() => {
-  const now = new Date().getTime();
-  const diff = anniversary - now;
-
+  const diff = anniversary - new Date().getTime();
   if (diff <= 0) {
     document.getElementById("timer").innerText =
       "Happy First Anniversary, My Love 🤍";
     return;
   }
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const mins = Math.floor((diff / (1000 * 60)) % 60);
-
+  const d = Math.floor(diff / (1000*60*60*24));
+  const h = Math.floor((diff / (1000*60*60)) % 24);
+  const m = Math.floor((diff / (1000*60)) % 60);
   document.getElementById("timer").innerText =
-    `${days} days • ${hours} hours • ${mins} minutes`;
+    `${d} days • ${h} hours • ${m} minutes`;
 }, 1000);
