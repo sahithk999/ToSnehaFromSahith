@@ -11,38 +11,38 @@ function unlock() {
 
 /* MUSIC */
 const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
+const musicBtn = document.getElementById("musicBtn");
 let playing = false;
 
-btn.onclick = () => {
+musicBtn.onclick = () => {
   if (!playing) {
     music.play();
-    btn.textContent = "⏸ Pause Music";
+    musicBtn.textContent = "⏸ Pause Music";
   } else {
     music.pause();
-    btn.textContent = "🎵 Play Music";
+    musicBtn.textContent = "🎵 Play Music";
   }
   playing = !playing;
+};
+
+/* SNEHA MODE */
+document.getElementById("snehaModeBtn").onclick = () => {
+  document.body.classList.toggle("sneha");
 };
 
 /* NOTES */
 function showNote(type) {
   const note = document.getElementById("noteText");
-  if (type === "happy") {
-    note.innerText = "Your smile is my favorite thing 😊";
-  } else if (type === "miss") {
-    note.innerText = "I’m always with you, even when I’m not 💖";
-  } else {
-    note.innerText = "Bad days pass, my love for you doesn’t 🤍";
-  }
+  if (type === "happy") note.innerText = "Your smile is my peace 😊";
+  if (type === "miss") note.innerText = "Distance never separated our hearts 💖";
+  if (type === "sad") note.innerText = "Even bad days end with us 🤍";
 }
 
 /* SCROLL ANIMATION */
 const events = document.querySelectorAll(".event");
 window.addEventListener("scroll", () => {
   events.forEach(e => {
-    const top = e.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
+    if (e.getBoundingClientRect().top < window.innerHeight - 100) {
       e.classList.add("show");
     }
   });
@@ -60,3 +60,24 @@ document.querySelectorAll(".gallery img").forEach(img => {
 });
 
 modal.onclick = () => modal.style.display = "none";
+
+/* ANNIVERSARY COUNTDOWN */
+const anniversary = new Date("November 01, 2026 00:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = anniversary - now;
+
+  if (diff <= 0) {
+    document.getElementById("timer").innerText =
+      "Happy First Anniversary, My Love 🤍";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const mins = Math.floor((diff / (1000 * 60)) % 60);
+
+  document.getElementById("timer").innerText =
+    `${days} days • ${hours} hours • ${mins} minutes`;
+}, 1000);
