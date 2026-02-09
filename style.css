@@ -2,18 +2,43 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #fff0f6;
-  text-align: center;
   color: #333;
+  text-align: center;
 }
 
+/* PASSWORD SCREEN */
+#lockScreen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 999;
+}
+
+#lockScreen input {
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  margin: 10px 0;
+  text-align: center;
+}
+
+#lockScreen button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* HEADER */
 header {
   padding: 40px 20px;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   color: white;
-}
-
-nav {
-  margin: 20px 0;
 }
 
 nav a {
@@ -23,12 +48,14 @@ nav a {
   font-weight: bold;
 }
 
+/* SECTIONS */
 .section {
   padding: 60px 20px;
   max-width: 900px;
   margin: auto;
 }
 
+/* TIMELINE */
 .timeline .event {
   background: white;
   margin: 30px auto;
@@ -36,6 +63,14 @@ nav a {
   border-radius: 20px;
   max-width: 600px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.timeline .event.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .timeline img {
@@ -44,6 +79,7 @@ nav a {
   margin-top: 10px;
 }
 
+/* GALLERY */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
@@ -56,6 +92,7 @@ nav a {
   cursor: pointer;
 }
 
+/* NOTES */
 .buttons button {
   margin: 10px;
   padding: 12px 20px;
@@ -66,7 +103,39 @@ nav a {
   cursor: pointer;
 }
 
+/* FOOTER */
 footer {
   padding: 40px;
   background: #ffd1dc;
+}
+
+/* MODAL */
+#modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 20px;
+}
+
+/* HEARTS */
+.hearts::before {
+  content: "❤️ 💖 💕 💘";
+  position: fixed;
+  width: 100%;
+  top: -10px;
+  animation: float 12s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(100vh); }
 }
