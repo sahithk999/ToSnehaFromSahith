@@ -1,129 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>To Sneha, From Sahith ❤️</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #fff5f8;
-  color: #333;
-}
-
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-h1 {
-  text-align: center;
-  color: #e75480;
-  font-size: 2.8em;
-}
-
-.subtitle {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 1.1em;
-}
-
-.timeline {
-  position: relative;
-  margin: 40px 0;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  width: 4px;
-  height: 100%;
-  background: #ffd1dc;
-  transform: translateX(-50%);
-}
-
-.event {
-  width: 45%;
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  margin: 20px 0;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-.event img {
-  width: 100%;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
-.left {
-  float: left;
-  clear: both;
-}
-
-.right {
-  float: right;
-  clear: both;
-}
-
-.event h3 {
-  color: #e75480;
-}
-
-.footer {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 1em;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>To Sneha, From Sahith ❤️</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<audio autoplay loop>
+<!-- Floating hearts -->
+<div class="hearts"></div>
+
+<!-- Music -->
+<audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<div class="container">
+<header>
   <h1>To Sneha ❤️</h1>
-  <div class="subtitle">From Sahith — our love story</div>
+  <p>From Sahith — our love story</p>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#gallery">Photos</a>
+    <a href="#notes">Notes</a>
+  </nav>
+
+  <button id="musicBtn">🎵 Play Music</button>
+</header>
+
+<section id="home" class="section">
+  <h2>Hi Sneha 🥰</h2>
+  <p>
+    This is our little corner of the internet.
+    A place where our memories live forever.
+  </p>
+</section>
+
+<section id="timeline" class="section">
+  <h2>Our Journey 💞</h2>
 
   <div class="timeline">
-
-    <div class="event left">
+    <div class="event">
       <h3>💫 The Beginning</h3>
-      <p>The day our story began. I didn’t know then, but you were about to change my life.</p>
+      <p>The moment our story quietly began.</p>
       <img src="photo1.jpg">
     </div>
 
-    <div class="event right">
-      <h3>❤️ Falling for You</h3>
-      <p>Somewhere between the conversations and smiles, I fell in love with you.</p>
+    <div class="event">
+      <h3>❤️ Falling in Love</h3>
+      <p>Somewhere between conversations and smiles.</p>
       <img src="photo2.jpg">
     </div>
 
-    <div class="event left">
-      <h3>🌸 Us</h3>
-      <p>Every memory with you is my favorite one.</p>
+    <div class="event">
+      <h3>🌸 Our Best Days</h3>
+      <p>Every day with you feels special.</p>
       <img src="photo3.jpg">
     </div>
+  </div>
+</section>
 
-    <div class="event right">
-      <h3>✨ Forever</h3>
-      <p>I choose you — today, tomorrow, always.</p>
-    </div>
+<section id="gallery" class="section">
+  <h2>Memories 📸</h2>
+  <div class="gallery">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+  </div>
+</section>
 
+<section id="notes" class="section">
+  <h2>Open When… 💌</h2>
+
+  <div class="buttons">
+    <button onclick="showNote('happy')">😊 Happy</button>
+    <button onclick="showNote('miss')">💭 Missing Me</button>
+    <button onclick="showNote('sad')">🤍 Sad</button>
   </div>
 
-  <div class="footer">
-    Happy Valentine’s Day 🤍<br>
-    Love, <strong>Sahith</strong>
-  </div>
-</div>
+  <p id="noteText"></p>
+</section>
 
+<footer>
+  Forever yours,<br>
+  <strong>Sahith</strong>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
