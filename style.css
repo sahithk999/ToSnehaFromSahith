@@ -6,7 +6,7 @@ body {
   text-align: center;
 }
 
-/* PASSWORD SCREEN */
+/* PASSWORD */
 #lockScreen {
   position: fixed;
   inset: 0;
@@ -19,19 +19,11 @@ body {
   z-index: 999;
 }
 
-#lockScreen input {
+#lockScreen input, #lockScreen button {
   padding: 12px;
   border-radius: 20px;
   border: none;
-  margin: 10px 0;
-  text-align: center;
-}
-
-#lockScreen button {
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
+  margin: 8px;
 }
 
 /* HEADER */
@@ -46,6 +38,19 @@ nav a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+}
+
+.header-buttons button {
+  margin: 10px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#snehaMessage {
+  display: none;
+  font-style: italic;
 }
 
 /* SECTIONS */
@@ -76,7 +81,20 @@ nav a {
 .timeline img {
   width: 100%;
   border-radius: 15px;
-  margin-top: 10px;
+}
+
+/* LOVE MAP */
+.map {
+  max-width: 600px;
+  margin: auto;
+}
+
+.map-point {
+  background: white;
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 5px solid #e75480;
+  border-radius: 10px;
 }
 
 /* GALLERY */
@@ -121,8 +139,16 @@ footer {
 
 #modal img {
   max-width: 90%;
-  max-height: 90%;
   border-radius: 20px;
+}
+
+/* SNEHA MODE */
+body.sneha {
+  background: linear-gradient(180deg, #ffe6f0, #fff0f6);
+}
+
+body.sneha #snehaMessage {
+  display: block;
 }
 
 /* HEARTS */
@@ -136,6 +162,5 @@ footer {
 }
 
 @keyframes float {
-  from { transform: translateY(0); }
   to { transform: translateY(100vh); }
 }
