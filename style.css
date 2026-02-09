@@ -1,12 +1,22 @@
+/* =========================
+   GLOBAL
+========================= */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #fff0f6;
   color: #333;
   text-align: center;
+  overflow-x: hidden;
 }
 
-/* PASSWORD */
+/* =========================
+   ANIMATED PASSWORD SCREEN
+========================= */
 #lockScreen {
   position: fixed;
   inset: 0;
@@ -16,21 +26,98 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  z-index: 999;
+  z-index: 9999;
 }
 
-#lockScreen input, #lockScreen button {
-  padding: 12px;
-  border-radius: 20px;
+#lockScreen h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.hint {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+#heartPassword {
+  display: flex;
+  gap: 15px;
+}
+
+#heartPassword button {
   border: none;
-  margin: 8px;
+  padding: 14px 16px;
+  border-radius: 50%;
+  font-size: 1.1em;
+  cursor: pointer;
+  background: rgba(255,255,255,0.95);
+  animation: float 2.5s ease-in-out infinite;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* HEADER */
+#heartPassword button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+#heartPassword button:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+
+#progress {
+  margin-top: 20px;
+  min-height: 20px;
+}
+
+/* Shake effect for wrong order */
+.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
+}
+
+/* =========================
+   HEARTS BACKGROUND
+========================= */
+.hearts::before {
+  content: "❤️ 💖 💕 💘 💗";
+  position: fixed;
+  width: 100%;
+  top: -10px;
+  text-align: center;
+  animation: float 12s linear infinite;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(100vh); }
+}
+
+/* =========================
+   HEADER
+========================= */
 header {
-  padding: 40px 20px;
+  padding: 50px 20px;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   color: white;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+nav {
+  margin: 20px 0;
 }
 
 nav a {
@@ -40,27 +127,48 @@ nav a {
   font-weight: bold;
 }
 
+.header-buttons {
+  margin-top: 15px;
+}
+
 .header-buttons button {
-  margin: 10px;
+  margin: 6px;
   padding: 10px 16px;
   border-radius: 20px;
   border: none;
   cursor: pointer;
+  font-weight: bold;
 }
 
+/* Sneha message */
 #snehaMessage {
   display: none;
+  margin-top: 12px;
   font-style: italic;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 .section {
   padding: 60px 20px;
   max-width: 900px;
   margin: auto;
 }
 
-/* TIMELINE */
+/* =========================
+   COUNTDOWN
+========================= */
+#timer {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #e75480;
+}
+
+/* =========================
+   TIMELINE
+========================= */
 .timeline .event {
   background: white;
   margin: 30px auto;
@@ -81,9 +189,12 @@ nav a {
 .timeline img {
   width: 100%;
   border-radius: 15px;
+  margin-top: 10px;
 }
 
-/* LOVE MAP */
+/* =========================
+   LOVE MAP
+========================= */
 .map {
   max-width: 600px;
   margin: auto;
@@ -95,9 +206,17 @@ nav a {
   padding: 20px;
   border-left: 5px solid #e75480;
   border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.05);
 }
 
-/* GALLERY */
+.map-point span {
+  font-weight: bold;
+  color: #e75480;
+}
+
+/* =========================
+   GALLERY
+========================= */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
@@ -108,9 +227,16 @@ nav a {
   width: 100%;
   border-radius: 15px;
   cursor: pointer;
+  transition: transform 0.3s;
 }
 
-/* NOTES */
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   NOTES
+========================= */
 .buttons button {
   margin: 10px;
   padding: 12px 20px;
@@ -121,13 +247,18 @@ nav a {
   cursor: pointer;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
   padding: 40px;
   background: #ffd1dc;
+  font-weight: bold;
 }
 
-/* MODAL */
+/* =========================
+   MODAL
+========================= */
 #modal {
   position: fixed;
   inset: 0;
@@ -135,32 +266,22 @@ footer {
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 
 #modal img {
   max-width: 90%;
+  max-height: 90%;
   border-radius: 20px;
 }
 
-/* SNEHA MODE */
+/* =========================
+   SNEHA MODE 🌸
+========================= */
 body.sneha {
   background: linear-gradient(180deg, #ffe6f0, #fff0f6);
 }
 
 body.sneha #snehaMessage {
   display: block;
-}
-
-/* HEARTS */
-.hearts::before {
-  content: "❤️ 💖 💕 💘";
-  position: fixed;
-  width: 100%;
-  top: -10px;
-  animation: float 12s linear infinite;
-  opacity: 0.2;
-}
-
-@keyframes float {
-  to { transform: translateY(100vh); }
 }
