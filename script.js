@@ -4,11 +4,10 @@ const back10 = document.getElementById("back10");
 const forward10 = document.getElementById("forward10");
 const vinyl = document.getElementById("vinyl");
 const title = document.getElementById("currentTitle");
-const listItems = document.querySelectorAll("#songList li");
-
 const progressBar = document.getElementById("progressBar");
 const currentTimeEl = document.getElementById("currentTime");
 const durationEl = document.getElementById("duration");
+const trackButtons = document.querySelectorAll(".tracks button");
 
 const songs = [
   { file: "song1.mp3", title: "🌹 Rose Day" },
@@ -26,6 +25,9 @@ function loadSong(index) {
   currentIndex = index;
   audio.src = songs[index].file;
   title.textContent = songs[index].title;
+
+  trackButtons.forEach(btn => btn.classList.remove("active"));
+  trackButtons[index].classList.add("active");
 }
 
 function playSong() {
@@ -54,9 +56,7 @@ forward10.addEventListener("click", () => {
 });
 
 audio.addEventListener("timeupdate", () => {
-  const percent = (audio.currentTime / audio.duration) * 100;
-  progressBar.value = percent;
-
+  progressBar.value = (audio.currentTime / audio.duration) * 100 || 0;
   currentTimeEl.textContent = formatTime(audio.currentTime);
 });
 
@@ -65,22 +65,18 @@ audio.addEventListener("loadedmetadata", () => {
 });
 
 progressBar.addEventListener("input", () => {
-  const time = (progressBar.value / 100) * audio.duration;
-  audio.currentTime = time;
+  audio.currentTime = (progressBar.value / 100) * audio.duration;
 });
 
 function formatTime(time) {
-  const minutes = Math.floor(time / 60);
-  const seconds = Math.floor(time % 60)
-    .toString()
-    .padStart(2, "0");
-  return `${minutes}:${seconds}`;
+  const m = Math.floor(time / 60);
+  const s = Math.floor(time % 60).toString().padStart(2, "0");
+  return `${m}:${s}`;
 }
 
-listItems.forEach(item => {
-  item.addEventListener("click", () => {
-    const index = parseInt(item.dataset.index);
-    loadSong(index);
+trackButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    loadSong(parseInt(btn.dataset.index));
     playSong();
   });
 });
