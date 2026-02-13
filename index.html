@@ -9,21 +9,22 @@
 
 <header>
   <h1>Seven Songs for Sneha</h1>
-  <p class="subtitle">Valentine’s Week • From Sahith</p>
+  <p>Valentine’s Week • From Sahith</p>
 </header>
 
-<section class="intro">
+<section class="hero">
   <h2>Happy Valentine’s Week 🤍</h2>
-  <p>
-    Seven days. Seven songs.  
-    Because one melody could never hold my love for you.
-  </p>
+  <p>Seven days. Seven songs. One heart.</p>
 </section>
 
-<section class="player-section">
+<section class="player-wrapper">
 
-  <div class="vinyl-container">
+  <div class="vinyl-area">
     <div class="vinyl" id="vinyl"></div>
+  </div>
+
+  <div class="song-title" id="currentTitle">
+    Select a song to begin
   </div>
 
   <div class="controls">
@@ -38,27 +39,27 @@
     <span id="duration">0:00</span>
   </div>
 
-  <p id="currentTitle">Select a song</p>
-
   <audio id="mainAudio"></audio>
+
 </section>
 
 <section class="tracklist">
-  <h2>The Seven Days 🎼</h2>
+  <h3>The Seven Days</h3>
 
-  <ul id="songList">
-    <li data-index="0">🌹 Rose Day</li>
-    <li data-index="1">💍 Propose Day</li>
-    <li data-index="2">🍫 Chocolate Day</li>
-    <li data-index="3">🧸 Teddy Day</li>
-    <li data-index="4">💌 Promise Day</li>
-    <li data-index="5">🤗 Hug Day</li>
-    <li data-index="6">❤️ Valentine’s Day</li>
-  </ul>
+  <div class="tracks">
+    <button data-index="0">🌹 Rose Day</button>
+    <button data-index="1">💍 Propose Day</button>
+    <button data-index="2">🍫 Chocolate Day</button>
+    <button data-index="3">🧸 Teddy Day</button>
+    <button data-index="4">💌 Promise Day</button>
+    <button data-index="5">🤗 Hug Day</button>
+    <button data-index="6">❤️ Valentine’s Day</button>
+  </div>
 </section>
 
 <section class="letter">
-  <h2>A Letter For You 💌</h2>
+  <h3>A Letter For You 💌</h3>
+
   <p>
     Sneha, from March 2022 until today,
     distance tested us, time shaped us,
@@ -67,13 +68,11 @@
 
   <p>
     These seven songs are pieces of my heart.
-    Even together,
-    they are smaller than what I feel for you.
+    Even together, they are smaller than what I feel for you.
   </p>
 
   <p class="signature">
-    Forever yours,<br>
-    Sahith 🤍
+    Forever yours,<br>Sahith 🤍
   </p>
 </section>
 
