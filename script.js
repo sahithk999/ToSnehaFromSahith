@@ -17,7 +17,8 @@ const songs = [
   { file: "song4.mp3", title: "🧸 Teddy Day" },
   { file: "song5.mp3", title: "💌 Promise Day" },
   { file: "song6.mp3", title: "🤗 Hug Day" },
-  { file: "song7.mp3", title: "❤️ Valentine’s Day" }
+  { file: "song7.mp3", title: "🤗 Kiss Day" },
+  { file: "song8.mp3", title: "❤️ Valentine’s Day" }
 ];
 
 let currentIndex = -1;
