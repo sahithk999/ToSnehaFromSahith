@@ -33,12 +33,14 @@ function loadSong(index) {
 function playSong() {
   audio.play();
   vinyl.classList.add("spinning", "glow");
+  vinyl.style.boxShadow = "0 0 80px rgba(255,255,255,0.8)";
   playBtn.textContent = "⏸";
 }
 
 function pauseSong() {
   audio.pause();
   vinyl.classList.remove("spinning", "glow");
+  vinyl.style.boxShadow = "0 0 40px rgba(255,255,255,0.3)";
   playBtn.textContent = "▶";
 }
 
