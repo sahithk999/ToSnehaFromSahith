@@ -19,12 +19,12 @@ const songs = [
   { file: "song7.mp3", title: "❤️ Valentine’s Day" }
 ];
 
-let currentIndex = 0;
+let currentIndex = -1;
 
 function loadSong(index) {
   currentIndex = index;
   audio.src = songs[index].file;
-  title.textContent = songs[index].title;
+  title.textContent = "Now Playing • " + songs[index].title;
 
   trackButtons.forEach(btn => btn.classList.remove("active"));
   trackButtons[index].classList.add("active");
@@ -32,17 +32,18 @@ function loadSong(index) {
 
 function playSong() {
   audio.play();
-  vinyl.classList.add("spinning");
+  vinyl.classList.add("spinning", "glow");
   playBtn.textContent = "⏸";
 }
 
 function pauseSong() {
   audio.pause();
-  vinyl.classList.remove("spinning");
+  vinyl.classList.remove("spinning", "glow");
   playBtn.textContent = "▶";
 }
 
 playBtn.addEventListener("click", () => {
+  if (currentIndex === -1) return; // nothing selected
   if (audio.paused) playSong();
   else pauseSong();
 });
@@ -56,7 +57,8 @@ forward10.addEventListener("click", () => {
 });
 
 audio.addEventListener("timeupdate", () => {
-  progressBar.value = (audio.currentTime / audio.duration) * 100 || 0;
+  if (!audio.duration) return;
+  progressBar.value = (audio.currentTime / audio.duration) * 100;
   currentTimeEl.textContent = formatTime(audio.currentTime);
 });
 
@@ -65,6 +67,7 @@ audio.addEventListener("loadedmetadata", () => {
 });
 
 progressBar.addEventListener("input", () => {
+  if (!audio.duration) return;
   audio.currentTime = (progressBar.value / 100) * audio.duration;
 });
 
@@ -76,7 +79,8 @@ function formatTime(time) {
 
 trackButtons.forEach(btn => {
   btn.addEventListener("click", () => {
-    loadSong(parseInt(btn.dataset.index));
+    const index = parseInt(btn.dataset.index);
+    loadSong(index);
     playSong();
   });
 });
