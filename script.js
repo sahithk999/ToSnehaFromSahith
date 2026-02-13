@@ -10,6 +10,21 @@ const trackButtons = document.querySelectorAll(".tracks button");
 const currentTitle = document.getElementById("currentTitle");
 const heartsContainer = document.getElementById("hearts");
 
+const intro = document.getElementById("intro");
+const introMusic = document.getElementById("introMusic");
+const enterBtn = document.getElementById("enterBtn");
+
+/* Play intro music when button is clicked */
+enterBtn.addEventListener("click", () => {
+  introMusic.play();
+
+  intro.style.opacity = "0";
+  setTimeout(() => {
+    intro.style.display = "none";
+  }, 1000);
+});
+
+
 const songs = [
   { file: "song1.mp3", title: "🌹 Rose Day" },
   { file: "song2.mp3", title: "💍 Propose Day" },
@@ -107,3 +122,5 @@ setInterval(() => {
     setTimeout(() => heart.remove(), 6000);
   }
 }, 600);
+
+
