@@ -1,35 +1,40 @@
 body {
   margin: 0;
-  font-family: Georgia, serif;
-  background: #f4efe7;
-  color: #4a1f24;
+  font-family: 'Poppins', sans-serif;
+  color: white;
   text-align: center;
+  overflow-x: hidden;
+}
+
+/* Animated Gradient Background */
+.bg-animation {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(-45deg, #ff4e50, #f9d423, #c471ed, #12c2e9);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 header {
-  background: #5b1d27;
-  color: #fff;
-  padding: 50px 20px;
+  padding: 60px 20px 30px;
 }
 
-header h1 {
+h1 {
   font-size: 2.8em;
-  margin: 0;
-}
-
-.hero {
-  padding: 40px 20px;
-}
-
-.player-wrapper {
-  padding: 50px 20px;
 }
 
 /* VINYL */
-.vinyl-area {
+.vinyl-wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 25px;
+  margin: 30px 0;
 }
 
 .vinyl {
@@ -37,15 +42,16 @@ header h1 {
   height: 260px;
   background: radial-gradient(circle, #111 40%, #222 60%, #000 90%);
   border-radius: 50%;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
   position: relative;
+  box-shadow: 0 0 40px rgba(255,255,255,0.3);
+  transition: 0.4s;
 }
 
 .vinyl::after {
   content: "";
   width: 60px;
   height: 60px;
-  background: #c9a35e;
+  background: gold;
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -62,105 +68,76 @@ header h1 {
   to { transform: rotate(360deg); }
 }
 
-.song-title {
-  font-size: 18px;
-  margin-bottom: 20px;
-  font-style: italic;
-}
-
-/* CONTROLS */
-.controls {
-  margin: 15px 0;
-}
-
+/* Controls */
 .controls button {
-  padding: 10px 16px;
-  margin: 0 8px;
-  background: #c9a35e;
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px 18px;
   border: none;
   border-radius: 30px;
+  background: rgba(255,255,255,0.2);
+  color: white;
   cursor: pointer;
-  font-family: Georgia, serif;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
 }
 
 .controls button:hover {
-  background: #ddb96c;
+  background: rgba(255,255,255,0.4);
 }
 
-/* PROGRESS BAR */
+/* Progress Bar */
 .progress-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  gap: 15px;
   max-width: 500px;
-  margin: 20px auto;
+  margin: auto;
 }
 
 #progressBar {
   flex: 1;
-  appearance: none;
   height: 6px;
-  background: #d6c4a1;
-  border-radius: 5px;
-  outline: none;
 }
 
-#progressBar::-webkit-slider-thumb {
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  background: #5b1d27;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.tracklist {
-  padding: 50px 20px;
-}
-
+/* Track buttons */
 .tracks {
+  margin: 40px auto;
+  max-width: 800px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 12px;
-  margin-top: 20px;
+  justify-content: center;
 }
 
 .tracks button {
   padding: 10px 16px;
-  border-radius: 25px;
-  border: 1px solid #5b1d27;
-  background: transparent;
+  border-radius: 30px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
   cursor: pointer;
-  font-family: Georgia, serif;
+  backdrop-filter: blur(10px);
   transition: 0.3s;
 }
 
 .tracks button:hover {
-  background: #5b1d27;
-  color: white;
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.4);
 }
 
 .tracks button.active {
-  background: #5b1d27;
-  color: white;
+  background: white;
+  color: black;
 }
 
+/* Letter */
 .letter {
-  padding: 60px 20px;
-  font-style: italic;
+  margin: 60px auto;
   max-width: 700px;
-  margin: auto;
-}
-
-.signature {
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-footer {
-  background: #5b1d27;
-  color: white;
-  padding: 30px;
+  background: rgba(0,0,0,0.2);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
 }
