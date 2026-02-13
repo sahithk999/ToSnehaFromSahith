@@ -15,84 +15,60 @@
 <section class="intro">
   <h2>Happy Valentine’s Week 🤍</h2>
   <p>
-    This week, I sing for you.  
     Seven days. Seven songs.  
-    Because one would never be enough.
+    Because one melody could never hold my love for you.
   </p>
 </section>
 
-<section class="songs">
-  <h2>The Playlist 🎼</h2>
+<section class="player-section">
 
-  <div class="song-grid">
-
-    <!-- Repeat for 7 songs -->
-
-    <div class="song-card">
-      <h3>🌹 Rose Day</h3>
-      <p>The beginning of us.</p>
-      <button class="play-btn" data-audio="song1">▶ Play</button>
-      <audio id="song1" src="song1.mp3"></audio>
-    </div>
-
-    <div class="song-card">
-      <h3>💍 Propose Day</h3>
-      <p>When I knew you were forever.</p>
-      <button class="play-btn" data-audio="song2">▶ Play</button>
-      <audio id="song2" src="song1.mp3"></audio>
-    </div>
-
-    <div class="song-card">
-      <h3>🍫 Chocolate Day</h3>
-      <p>Because you make life sweet.</p>
-      <button class="play-btn" data-audio="song3">▶ Play</button>
-      <audio id="song3" src="song3.mp3"></audio>
-    </div>
-
-    <div class="song-card">
-      <h3>🧸 Teddy Day</h3>
-      <p>Your warmth feels like home.</p>
-      <button class="play-btn" data-audio="song4">▶ Play</button>
-      <audio id="song4" src="song4.mp3"></audio>
-    </div>
-
-    <div class="song-card">
-      <h3>💌 Promise Day</h3>
-      <p>I choose you. Always.</p>
-      <button class="play-btn" data-audio="song5">▶ Play</button>
-      <audio id="song5" src="song5.mp3"></audio>
-    </div>
-
-    <div class="song-card">
-      <h3>🤗 Hug Day</h3>
-      <p>Even distance couldn’t break us.</p>
-      <button class="play-btn" data-audio="song6">▶ Play</button>
-      <audio id="song6" src="song6.mp3"></audio>
-    </div>
-
-    <div class="song-card">
-      <h3>❤️ Valentine’s Day</h3>
-      <p>My heart belongs to you.</p>
-      <button class="play-btn" data-audio="song7">▶ Play</button>
-      <audio id="song7" src="song7.mp3"></audio>
-    </div>
-
+  <div class="vinyl-container">
+    <div class="vinyl" id="vinyl"></div>
   </div>
+
+  <div class="controls">
+    <button id="back10">⏪ 10s</button>
+    <button id="playBtn">▶</button>
+    <button id="forward10">10s ⏩</button>
+  </div>
+
+  <div class="progress-container">
+    <span id="currentTime">0:00</span>
+    <input type="range" id="progressBar" value="0" min="0" max="100">
+    <span id="duration">0:00</span>
+  </div>
+
+  <p id="currentTitle">Select a song</p>
+
+  <audio id="mainAudio"></audio>
+</section>
+
+<section class="tracklist">
+  <h2>The Seven Days 🎼</h2>
+
+  <ul id="songList">
+    <li data-index="0">🌹 Rose Day</li>
+    <li data-index="1">💍 Propose Day</li>
+    <li data-index="2">🍫 Chocolate Day</li>
+    <li data-index="3">🧸 Teddy Day</li>
+    <li data-index="4">💌 Promise Day</li>
+    <li data-index="5">🤗 Hug Day</li>
+    <li data-index="6">❤️ Valentine’s Day</li>
+  </ul>
 </section>
 
 <section class="letter">
   <h2>A Letter For You 💌</h2>
   <p>
-    Sneha,  
-    From the first day in March 2022 to the day we became husband and wife,
-    our story has been my greatest blessing.  
-    Distance tested us. Time shaped us.  
-    But love carried us.
+    Sneha, from March 2022 until today,
+    distance tested us, time shaped us,
+    but love carried us.
   </p>
 
   <p>
-    These seven songs are not just music —
-    they are pieces of my heart.
+    These seven songs are pieces of my heart.
+    Even together,
+    they are smaller than what I feel for you.
   </p>
 
   <p class="signature">
