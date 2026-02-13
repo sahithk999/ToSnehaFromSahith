@@ -167,35 +167,63 @@ body {
   100% { box-shadow: 0 0 30px rgba(255,255,255,0.3); }
 }
 
-/* Intro Screen */
+/* =========================
+   INTRO SCREEN (FINAL)
+========================= */
+
 #intro {
   position: fixed;
   inset: 0;
-  background: black;
+  background: linear-gradient(135deg, #1c1c1c, #5b1d27, #ff4e50);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  animation: fadeOutIntro 2s ease 5s forwards;
-}
-
-.intro-text {
   text-align: center;
+  transition: opacity 1s ease;
+}
+
+.intro-content {
   color: white;
-  animation: fadeInText 2s ease forwards;
+  max-width: 600px;
+  padding: 40px;
+  animation: fadeInIntro 1.5s ease forwards;
 }
 
-.intro-text h2 {
-  font-size: 3em;
+.intro-content h1 {
+  font-size: 2.8em;
   margin-bottom: 20px;
-  animation: heartbeat 2s infinite;
 }
 
-.intro-text p {
+.intro-content p {
   font-size: 1.2em;
-  letter-spacing: 2px;
-  opacity: 0.8;
+  opacity: 0.9;
+  margin-bottom: 30px;
 }
+
+#enterBtn {
+  padding: 14px 30px;
+  border-radius: 40px;
+  border: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+  background: linear-gradient(45deg, #ff4e50, #c471ed);
+  color: white;
+  cursor: pointer;
+  transition: 0.4s ease;
+  box-shadow: 0 0 20px rgba(255, 100, 150, 0.6);
+}
+
+#enterBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(255, 100, 200, 1);
+}
+
+@keyframes fadeInIntro {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 /* Fade animations */
 @keyframes fadeInText {
