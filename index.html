@@ -2,164 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>To Sneha, From Sahith ❤️</title>
+  <title>Seven Songs for Sneha ❤️</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- 🔐 ANIMATED HEART PASSWORD SCREEN -->
-<div id="lockScreen">
-  <h2>💖 To Sneha, From Sahith</h2>
-  <p class="hint">Touch the letters of your name 💕</p>
-
-  <div id="heartPassword">
-    <button data-letter="S">💖 S</button>
-    <button data-letter="N">💕 N</button>
-    <button data-letter="E">💗 E</button>
-    <button data-letter="H">💘 H</button>
-    <button data-letter="A">❤️ A</button>
-  </div>
-
-  <p id="progress"></p>
-</div>
-
-<!-- 🌍 MAIN WEBSITE CONTENT -->
-<div id="siteContent" style="display:none;">
-
-<div class="hearts"></div>
-
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
 <header>
-  <h1>To Sneha ❤️</h1>
-  <p>From Sahith — our love story</p>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#countdown">Countdown</a>
-    <a href="#timeline">Timeline</a>
-    <a href="#lovemap">Love Map</a>
-    <a href="#gallery">Photos</a>
-    <a href="#notes">Notes</a>
-  </nav>
-
-  <div class="header-buttons">
-    <button id="musicBtn">🎵 Play Music</button>
-    <button id="snehaModeBtn">💖 Sneha Mode</button>
-  </div>
-
-  <p id="snehaMessage">This world feels better when you’re in it, Sneha 🤍</p>
+  <h1>Seven Songs for Sneha</h1>
+  <p class="subtitle">Valentine’s Week • From Sahith</p>
 </header>
 
-<section id="home" class="section">
-  <h2>Hi Sneha 🥰</h2>
+<section class="intro">
+  <h2>Happy Valentine’s Week 🤍</h2>
   <p>
-    This little corner of the internet is just for you.
-    Every memory here exists because of us.
+    This week, I sing for you.  
+    Seven days. Seven songs.  
+    Because one would never be enough.
   </p>
 </section>
 
-<section id="countdown" class="section">
-  <h2>First Anniversary Countdown ⏳</h2>
-  <p>Counting every second since we became forever 🤍</p>
-  <h3 id="timer"></h3>
-</section>
+<section class="songs">
+  <h2>The Playlist 🎼</h2>
 
-<section id="timeline" class="section">
-  <h2>Our Journey 💞</h2>
+  <div class="song-grid">
 
-  <div class="timeline">
-    <div class="event">
-      <h3>💫 March 2022</h3>
-      <p>The beginning of something beautiful.</p>
-      <img src="photo1.jpg">
+    <!-- Repeat for 7 songs -->
+
+    <div class="song-card">
+      <h3>🌹 Rose Day</h3>
+      <p>The beginning of us.</p>
+      <button class="play-btn" data-audio="song1">▶ Play</button>
+      <audio id="song1" src="song1.mp3"></audio>
     </div>
 
-    <div class="event">
-      <h3>✈️ Distance (2022–2024)</h3>
-      <p>Miles apart, hearts together.</p>
-      <img src="photo2.jpg">
+    <div class="song-card">
+      <h3>💍 Propose Day</h3>
+      <p>When I knew you were forever.</p>
+      <button class="play-btn" data-audio="song2">▶ Play</button>
+      <audio id="song2" src="song2.mp3"></audio>
     </div>
 
-    <div class="event">
-      <h3>💞 April 2024</h3>
-      <p>Meeting you again felt like home.</p>
-      <img src="photo3.jpg">
+    <div class="song-card">
+      <h3>🍫 Chocolate Day</h3>
+      <p>Because you make life sweet.</p>
+      <button class="play-btn" data-audio="song3">▶ Play</button>
+      <audio id="song3" src="song3.mp3"></audio>
     </div>
 
-    <div class="event">
-      <h3>💍 November 2025</h3>
-      <p>The day you became my forever.</p>
-      <img src="photo4.jpg">
+    <div class="song-card">
+      <h3>🧸 Teddy Day</h3>
+      <p>Your warmth feels like home.</p>
+      <button class="play-btn" data-audio="song4">▶ Play</button>
+      <audio id="song4" src="song4.mp3"></audio>
     </div>
+
+    <div class="song-card">
+      <h3>💌 Promise Day</h3>
+      <p>I choose you. Always.</p>
+      <button class="play-btn" data-audio="song5">▶ Play</button>
+      <audio id="song5" src="song5.mp3"></audio>
+    </div>
+
+    <div class="song-card">
+      <h3>🤗 Hug Day</h3>
+      <p>Even distance couldn’t break us.</p>
+      <button class="play-btn" data-audio="song6">▶ Play</button>
+      <audio id="song6" src="song6.mp3"></audio>
+    </div>
+
+    <div class="song-card">
+      <h3>❤️ Valentine’s Day</h3>
+      <p>My heart belongs to you.</p>
+      <button class="play-btn" data-audio="song7">▶ Play</button>
+      <audio id="song7" src="song7.mp3"></audio>
+    </div>
+
   </div>
 </section>
 
-<section id="lovemap" class="section">
-  <h2>Our Love Map 🗺️</h2>
+<section class="letter">
+  <h2>A Letter For You 💌</h2>
+  <p>
+    Sneha,  
+    From the first day in March 2022 to the day we became husband and wife,
+    our story has been my greatest blessing.  
+    Distance tested us. Time shaped us.  
+    But love carried us.
+  </p>
 
-  <div class="map">
-    <div class="map-point">
-      <span>📍 March 2022</span>
-      <p>Our story began.</p>
-    </div>
+  <p>
+    These seven songs are not just music —
+    they are pieces of my heart.
+  </p>
 
-    <div class="map-point">
-      <span>✈️ 2022–2024</span>
-      <p>Different countries, same heartbeat.</p>
-    </div>
-
-    <div class="map-point">
-      <span>💞 April 2024</span>
-      <p>Love felt brand new again.</p>
-    </div>
-
-    <div class="map-point">
-      <span>🤍 November 2024</span>
-      <p>Another reunion, stronger than distance.</p>
-    </div>
-
-    <div class="map-point">
-      <span>💍 November 2025</span>
-      <p>Forever finally began.</p>
-    </div>
-  </div>
-</section>
-
-<section id="gallery" class="section">
-  <h2>Memories 📸</h2>
-  <div class="gallery">
-    <img src="photo1.jpg">
-    <img src="photo2.jpg">
-    <img src="photo3.jpg">
-    <img src="photo4.jpg">
-  </div>
-</section>
-
-<section id="notes" class="section">
-  <h2>Open When… 💌</h2>
-  <div class="buttons">
-    <button onclick="showNote('happy')">😊 Happy</button>
-    <button onclick="showNote('miss')">💭 Missing Me</button>
-    <button onclick="showNote('sad')">🤍 Sad</button>
-  </div>
-  <p id="noteText"></p>
+  <p class="signature">
+    Forever yours,<br>
+    Sahith 🤍
+  </p>
 </section>
 
 <footer>
-  No matter where life takes us,<br>
-  I’d still choose you — every lifetime.<br><br>
-  <strong>Sahith</strong>
+  Happy Valentine’s Day, Sneha ❤️
 </footer>
-
-</div>
-
-<!-- 🖼️ IMAGE MODAL -->
-<div id="modal">
-  <img id="modalImg">
-</div>
 
 <script src="script.js"></script>
 </body>
