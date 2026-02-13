@@ -166,3 +166,51 @@ body {
   50% { box-shadow: 0 0 80px rgba(255,100,200,0.9); }
   100% { box-shadow: 0 0 30px rgba(255,255,255,0.3); }
 }
+
+/* Intro Screen */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOutIntro 2s ease 5s forwards;
+}
+
+.intro-text {
+  text-align: center;
+  color: white;
+  animation: fadeInText 2s ease forwards;
+}
+
+.intro-text h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  animation: heartbeat 2s infinite;
+}
+
+.intro-text p {
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+/* Fade animations */
+@keyframes fadeInText {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOutIntro {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
