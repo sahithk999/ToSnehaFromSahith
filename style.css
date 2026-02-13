@@ -1,6 +1,97 @@
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #f4efe7;
+  color: #4a1f24;
+  text-align: center;
+}
+
+header {
+  background: #5b1d27;
+  color: #fff;
+  padding: 50px 20px;
+}
+
+header h1 {
+  font-size: 2.8em;
+  margin: 0;
+}
+
+.hero {
+  padding: 40px 20px;
+}
+
+.player-wrapper {
+  padding: 50px 20px;
+}
+
+/* VINYL */
+.vinyl-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.vinyl {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, #111 40%, #222 60%, #000 90%);
+  border-radius: 50%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.vinyl::after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background: #c9a35e;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinning {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+
+.song-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* CONTROLS */
+.controls {
+  margin: 15px 0;
+}
+
+.controls button {
+  padding: 10px 16px;
+  margin: 0 8px;
+  background: #c9a35e;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: Georgia, serif;
+}
+
+.controls button:hover {
+  background: #ddb96c;
+}
+
+/* PROGRESS BAR */
 .progress-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   max-width: 500px;
   margin: 20px auto;
@@ -19,12 +110,57 @@
   appearance: none;
   width: 14px;
   height: 14px;
-  background: #7a1f2b;
+  background: #5b1d27;
   border-radius: 50%;
   cursor: pointer;
 }
 
-#currentTime, #duration {
-  font-size: 14px;
-  width: 45px;
+.tracklist {
+  padding: 50px 20px;
+}
+
+.tracks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.tracks button {
+  padding: 10px 16px;
+  border-radius: 25px;
+  border: 1px solid #5b1d27;
+  background: transparent;
+  cursor: pointer;
+  font-family: Georgia, serif;
+  transition: 0.3s;
+}
+
+.tracks button:hover {
+  background: #5b1d27;
+  color: white;
+}
+
+.tracks button.active {
+  background: #5b1d27;
+  color: white;
+}
+
+.letter {
+  padding: 60px 20px;
+  font-style: italic;
+  max-width: 700px;
+  margin: auto;
+}
+
+.signature {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+footer {
+  background: #5b1d27;
+  color: white;
+  padding: 30px;
 }
