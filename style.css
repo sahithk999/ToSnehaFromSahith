@@ -225,20 +225,3 @@ body {
 }
 
 
-/* Fade animations */
-@keyframes fadeInText {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes fadeOutIntro {
-  to { opacity: 0; visibility: hidden; }
-}
-
-@keyframes heartbeat {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-
